@@ -1,0 +1,11 @@
+<input
+  [(ngModel)]="serverName">
+<button
+  [disabled]="!isResetEnabled"
+  (click)="onClickResetForm()">Reset</button>
+<p *ngIf="hasServerName; else noServer">
+  New server name is: <b>{{serverName}}</b>
+</p>
+<ng-template #noServer>
+  <p>Enter a server name.</p>
+</ng-template>
