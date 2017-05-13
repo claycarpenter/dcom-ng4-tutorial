@@ -1,0 +1,26 @@
+<section>
+  <header>
+    <h3>The Game</h3>
+  </header>
+  <app-game-control
+    (intervals)="onInterval($event)"
+    (gameStates)="onGameState($event)"
+    ></app-game-control>
+  <p>
+    Current number: <b>{{ currentNumber }}</b>
+  </p>
+  <h4>Odds</h4>
+  <app-game-number
+    *ngFor="let number of oddNumbers"
+    [number]="number"
+    [color]="'green'">
+    <p #numContainer>{{ number }}</p>
+  </app-game-number>
+  <h4>Evens</h4>
+  <app-game-number
+    *ngFor="let number of evenNumbers"
+    [number]="number"
+    [color]="'orange'">
+    <span #numContainer>{{ number }}</span>
+  </app-game-number>
+</section>
